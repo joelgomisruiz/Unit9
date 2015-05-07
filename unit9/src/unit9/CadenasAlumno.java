@@ -111,23 +111,7 @@ public class CadenasAlumno {
 		}
 		return new String(caracteres);
 	}
-	/**
-	 * Método que nos divide una cadena en base a una regla/expresión y un límite que será el número total de cadenas que queremos que nos muestre
-	 * @param cadena
-	 * @param regla
-	 * @param limite
-	 */
-	public void muestraSplitLimite(String cadena, String regla, int limite){
-		//TODO
-	}
-	/**
-	 *  método que nos divide una cadena en base a una regla/expresión
-	 * @param cadena
-	 * @param regla
-	 */
-	public void muestraSplit(String cadena, String regla){
-		//TODO
-	}
+
 	/**
 	 * método que devuelve un String sin espacios previos/posteriores
 	 * @param cadena
@@ -190,11 +174,8 @@ public class CadenasAlumno {
 	 * @return false si no
 	 */
 	public boolean acabaEn(String cadena, String prefijo){
-		if (cadena.charAt(cadena.length()) == prefijo.charAt(prefijo.length())){
-			return true;
-		}
-		else
-			return false;
+		
+		return cadena.endsWith(prefijo);
 	}
 	/**
 	 * método que te devuelve la posición en la que se encuentra una letra/conjunto de letras en un string
