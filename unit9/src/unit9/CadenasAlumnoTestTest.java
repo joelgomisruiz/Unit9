@@ -88,6 +88,91 @@ public class CadenasAlumnoTestTest {
 		String cadena1 = "entornos", cadena2 = "Entornos";
 		assertEquals(cadena1.equalsIgnoreCase(cadena2),new CadenasAlumno().comparaIgnorandoMayusculas(cadena1, cadena2));
 	}
-	
+	@Test
+    public void testReemplazaPrimerosA() {
+        String cadena = "HolaHolaHolaHola";
+        String regla = "Hol";
+        String cambio = "Ros";
+        String correcto = cadena.replaceFirst(regla, cambio);
+        assertEquals(correcto,new CadenasAlumno().reemplazaPrimero(cadena, regla, cambio));
+    }
+    @Test
+    public void testReemplazaPrimerosB() {
 
+        String cadena = "HoolaHolaHolaHola";
+        String regla = "Hol";
+        String cambio = "Ros";
+        String correcto = cadena.replaceFirst(regla, cambio);
+        assertEquals(correcto,new CadenasAlumno().reemplazaPrimero(cadena, regla, cambio));
+    }
+    @Test
+    public void testReemplazaTodosA() {
+        String cadena = "HolaHolaHolaHola";
+        String regla = "Hol";
+        String cambio = "Ros";
+        String correcto = cadena.replace(regla, cambio);
+        assertEquals(correcto,new CadenasAlumno().reemplazaTodos(cadena, regla, cambio));
+    }
+    @Test
+    public void testReemplazaTodosB() {
+
+        String cadena = "HoolaHolaHolaHola";
+        String regla = "Hol";
+        String cambio = "Ros";
+        String correcto = cadena.replace(regla, cambio);
+        assertEquals(correcto,new CadenasAlumno().reemplazaTodos(cadena, regla, cambio));
+    }
+    @Test
+    public void testQuitaEspaciosA() {
+
+        String cadena = " JoelGomisRuiz ";
+        assertEquals(cadena.trim(),new CadenasAlumno().quitaEspacios(cadena));
+
+    }
+    @Test
+    public void testQuitaEspaciosB() {
+
+        String cadena = "   JoelGomisRuiz    ";
+        assertEquals(cadena.trim(),new CadenasAlumno().quitaEspacios(cadena));
+    }
+    @Test
+	public void testConvertirMayusA() {
+		String cadena1 = "entornos";
+		assertEquals(cadena1.toUpperCase(), new CadenasAlumno().convertirMayusculas(cadena1));
+	}
+    @Test
+  	public void testConvertirMayusB() {
+  		String cadena1 = "EnTorNos";
+  		assertEquals(cadena1.toUpperCase(), new CadenasAlumno().convertirMayusculas(cadena1));
+  	}
+    @Test
+  	public void testConvertirMayusC() {
+  		String cadena1 = "ENTORNOS";
+  		assertEquals(cadena1.toUpperCase(), new CadenasAlumno().convertirMayusculas(cadena1));
+  	}
+    @Test
+  	public void testConvertirMayusD() {
+  		String cadena1 = "entorNOS ";
+  		assertEquals(cadena1.toUpperCase(), new CadenasAlumno().convertirMayusculas(cadena1));
+  	}
+    @Test
+	public void testConvertirMinusA() {
+		String cadena1 = "entornos";
+		assertEquals(cadena1.toLowerCase(), new CadenasAlumno().convertirMinusculas(cadena1));
+	}
+    @Test
+  	public void testConvertirMinusB() {
+  		String cadena1 = "EnTorNos";
+  		assertEquals(cadena1.toLowerCase(), new CadenasAlumno().convertirMinusculas(cadena1));
+  	}
+    @Test
+  	public void testConvertirMinusC() {
+  		String cadena1 = "ENTORNOS";
+  		assertEquals(cadena1.toLowerCase(), new CadenasAlumno().convertirMinusculas(cadena1));
+  	}
+    @Test
+  	public void testConvertirMinusD() {
+  		String cadena1 = "entorNOS ";
+  		assertEquals(cadena1.toLowerCase(), new CadenasAlumno().convertirMinusculas(cadena1));
+  	}
 }
