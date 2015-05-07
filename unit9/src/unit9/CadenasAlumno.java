@@ -24,10 +24,27 @@ public class CadenasAlumno {
 	 */
 	public boolean sonIguales(String cadena1, String cadena2){
 	
+		boolean resultado = false;
+		int contador = 0;
+		
 		if(cadena1.length() == cadena2.length())
-			return true;
+			resultado = true;
 		else
-			return false;
+			resultado = false;
+		
+		if(resultado == true){
+			for(int i=0; i<cadena1.length();i++)
+				if(cadena1.charAt(i) == cadena2.charAt(i)){
+					contador++;
+				}
+		}
+		if(contador == cadena1.length()){
+			resultado = true;
+		}
+		else{
+			resultado = false;
+		}
+		return resultado;
 	}
 	/**
 	 * método que compara dos cadenas y te dice si la primera es mayor
@@ -66,10 +83,27 @@ public class CadenasAlumno {
 	 */
 	public boolean comparaIgnorandoMayusculas(String cadena1, String cadena2){
 		
+		boolean resultado = false;
+		int contador = 0;
+		
 		if(cadena1.toLowerCase().length() == cadena2.toLowerCase().length())
-			return true;
+			resultado = true;
 		else
-			return false;
+			resultado = false;
+		
+		if(resultado == true){
+			for(int i=0; i<cadena1.length();i++)
+				if(cadena1.toLowerCase().charAt(i) == cadena2.toLowerCase().charAt(i)){
+					contador++;
+				}
+		}
+		if(contador == cadena1.length()){
+			resultado = true;
+		}
+		else{
+			resultado = false;
+		}
+		return resultado;
 	}
 	/**
 	 * método que reemplaza de la cadena: cadena todos los regla/expresión que hay por cambio
@@ -79,16 +113,22 @@ public class CadenasAlumno {
 	 * @return devuelve la cadena con el cambio.
 	 */
 	public String reemplazaTodos(String cadena, String regla, String cambio){
-		char[] caracteres = cadena.toCharArray();
-		char[] expresion = regla.toCharArray();
-		char[] palabranueva = cambio.toCharArray();
 		
+
+	
+		char[] cadenapartida = cadena.toCharArray();
+		char[] reglapartida = regla.toCharArray();
+		char[] cambiopartido = cambio.toCharArray();
+	
 		for(int i=0; i<cadena.length(); i++){
-			if(caracteres[i] == expresion[0]){
-				caracteres[i] = palabranueva[0];
+			for(int j=0; j<regla.length();j++){
+				if(cadenapartida[i] == reglapartida[j]){
+					cadenapartida[i] = cambiopartido[j];
+				}
 			}
 		}
-		return new String(caracteres);
+		
+		return new String(cadenapartida);
 	}
 	/**
 	 * método que reemplaza en la cadena: cadena la primera regla/expresión que hay por cambio
